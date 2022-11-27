@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Rubik+Microbe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+}
+
+/* NavBar */
+
+.navbar{
+    width: 100vw;
+    height: 5vh;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2vh;
+    z-index: 1000;
+}
+
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: #fff 2px solid;
+    width: 50vw;
+    padding-bottom: 1vh;
+}
+
+.navbar ul li{
+    list-style-type: none;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar ul li:not(:last-child){
+    margin-right: 15px;
+}
+
+/* NavBar fim */
+/* Inicio */
+
+section#inicio{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+section#inicio .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 50px;
+    font-family: 'Rubik Microbe', cursive;
+    width: 40vw;
+    height: auto;
+    text-align: center;
+    z-index: 10;
+}
+
+section#inicio .text h6{
+    font-family: 'Patrick Hand', cursive;
+    font-size: large;
+}
+
+section#inicio .animation-content{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    animation: infinite rodar 15s;
+}
+
+section#inicio .animation-content .circulo{
+    width: 25vw;
+    height: 25vw;
+    border-radius: 100%;
+    position: absolute;
+    transition: 3s;
+    filter: blur(60px);
+}
+
+section#inicio .animation-content .circulo#alfa{
+    background-color: #1E78C2;
+    transform: translate(2vw, 12vh);
+    animation: infinite  mover1 15s ease-out;
+    z-index: 1;
+}
+section#inicio .animation-content .circulo#beta{
+    background-color: #113EA7;
+    transform: translate(-2vw, -12vh);
+    animation: infinite  mover2 15s ease-out;
+    z-index: 2;
+}
+section#inicio .animation-content .circulo#gamma{
+    background-color: #140F2D;
+    animation: alternate-reverse ease-out infinite mover2 20s;
+    z-index: 3;
+}
+
+@keyframes mover1 {
+    0%{
+        transform: translate(2vw, 12vh);
+    }
+    25%{
+        transform: translate(-2vw, -12vh);
+    }
+    50%{
+        transform: translate(-2vw, 12vh);
+    }
+    75%{
+        transform: translate(2vw, -12vh);
+    }
+    100%{
+        transform: translate(2vw, 12vh);
+    }
+}
+@keyframes mover2 {
+    0%{
+        transform: translate(-2vw, -12vh);
+    }
+    25%{
+        transform: translate(2vw, 12vh);
+    }
+    50%{
+        transform: translate(2vw, -12vh);
+    }
+    75%{
+        transform: translate(-2vw, 12vh);
+    }
+    100%{
+        transform: translate(-2vw, -12vh);
+    }
+}
+@keyframes mover3 {
+    0%{
+        transform: translate(0);
+    }
+    17%{
+        transform: translate(0, -12vh);
+    }
+    34%{
+        transform: translate(0, 12vh);
+    }
+    51%{
+        transform: translate(0, 0);
+    }
+    68%{
+        transform: translate(2vw, 0);
+    }
+    85%{
+        transform: translate(-2vw, 0);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes rodar {
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+/* Inicio fim */
